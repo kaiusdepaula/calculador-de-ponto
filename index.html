@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title> Calculadora de Ponto </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Pyscript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1> Calculadora de Ponto </h1>
+      <article>
+          <p>Calculadora de ponto simples de uso rotineiro para cálculo do horário de saída de um funcionário.</p>
+      </article>
+    </section>
+    <section class="pyscript">
+
+      <!-- Importo a calculadora -->
+      <script type="py" src="./main.py"></script>
+      
+      <!-- Coleto as informações do usuário --> 
+      <label for="expediente"> Expediente do dia: </label> 
+      <input type="number" id="expediente" name="expediente" value="8" min="1" required>
+      <br><br>
+      <label for="entrada_1"> Horário de entrada: </label> 
+      <input type="time" id="entrada_1" name="entrada_1" required>
+      <br><br>
+      <label for="saida_1"> Horário de saída para almoço: </label> 
+      <input type="time" id="saida_1" name="saida_1" required>
+      <br><br>
+      <label for="entrada_2"> Horário de entrada pós almoço: </label> 
+      <input type="time" id="entrada_2" name="entrada_2" required>
+      <br><br>
+
+      <!-- Processo os inputs na calculadora -->
+      <button py-click="calcular_saida">Calcular</button>
+      <p id="hora_saida"></p>
+
+    </section>
+  </body>
+</html>
